@@ -12,5 +12,7 @@ I've added comments to the js file explaining what everything does.
 
 Check demo at https://virtuodigital.github.io/secret-santa/
 
+(The demo will not save the names to JSON but gives you an idea of how it works)
+
 Please report bugs, fix, collaborate, fork away and have fun!
 
