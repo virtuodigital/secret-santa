@@ -45,6 +45,13 @@ for(var i = 0; i < names.length; i++) {
     select.appendChild(el);
 }
 
+// on page1 assign the user to the giver var and go to page 2
+$('#person').on('change', function(e) {
+  e.preventDefault();
+  giver = $("select[name='person']").val(); 
+  showLayer('page2');
+});
+
 
 // showLayer() shows and hides the divs in the html file as if they where different pages
 // So first show page1 as default
@@ -53,17 +60,6 @@ function showLayer(lyr) {
 	hideLayer(currentLayer); 
 	document.getElementById(lyr).style.visibility = 'visible'; 
 	currentLayer = lyr; 
-
-
-	// on page1 assign the user to the giver var and go to page 2
-	if(lyr=='page1'){
-		$('#person').on('change', function(e) {
-			e.preventDefault();
-			giver = $("select[name='person']").val(); 
-			showLayer('page2');
-		});
-	}
-
 
 
 	// if you're on page2 check if this person already clicked the hat
