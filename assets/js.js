@@ -34,13 +34,8 @@ $.getJSON("assets/pairs.json", function(json){
     pairs = json;
 });
 
-// showLayer() shows and hides the divs in the html file as if they where different pages
-// So first show page1 as default
-// page1 will ask who you are by populating a select tag with the names[] array above
 
-
-
-// populate select field page1
+// populate select field on page1 with names from the array above
 var select = document.getElementById("person"); 
 for(var i = 0; i < names.length; i++) {
     var opt = names[i];
@@ -50,20 +45,25 @@ for(var i = 0; i < names.length; i++) {
     select.appendChild(el);
 }
 
-// showLayer() trigger on page1
-$('#person').on('change', function(e) {
-  e.preventDefault();
-  giver = $("select[name='person']").val(); 
-  showLayer('page2');
-});
 
-
-
+// showLayer() shows and hides the divs in the html file as if they where different pages
+// So first show page1 as default
 var currentLayer = 'page1'; 
 function showLayer(lyr) { 
 	hideLayer(currentLayer); 
 	document.getElementById(lyr).style.visibility = 'visible'; 
 	currentLayer = lyr; 
+
+
+	// on page1 assign the user to the giver var and go to page 2
+	if(lyr=='page1'){
+		$('#person').on('change', function(e) {
+			e.preventDefault();
+			giver = $("select[name='person']").val(); 
+			showLayer('page2');
+		});
+	}
+
 
 
 	// if you're on page2 check if this person already clicked the hat
