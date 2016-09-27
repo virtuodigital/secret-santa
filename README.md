@@ -10,4 +10,7 @@ a hat (like when you do the secret Santa dynamic at the office).
 
 I've added comments to the js file explaining what everything does.
 
+Check demo at https://virtuodigital.github.io/secret-santa/
+
 Please report bugs, fix, collaborate, fork away and have fun!
+
